@@ -64,9 +64,7 @@ if exists(":Tabular")
     vnoremap <silent><leader>xa: :'<,'>Tab /:<cr>
     vnoremap <silent><leader>xa= :'<,'>Tab /=<cr>
     vnoremap <silent><leader>xa& :'<,'>Tab /&<cr>
-    vnoremap <silent><leader>xa| :'<,'>Tab /|<cr>
-    vnoremap <silent><leader>xa. :'<,'>Tab /.<cr>
-    vnoremap <silent><leader>xa. :'<,'>Tab /.<cr>
+    vnoremap <silent><leader>xa\| :'<,'>Tab /\|<cr>
 endif
 
 
