@@ -1,7 +1,7 @@
 # vim-spacemacs
 
 For those days when emacs lets you down and you have to drop back to vim.  This
-plugin attempts to bring as spacemacs keybinding back into vim.
+plugin attempts to bring spacemacs keybinding back into vim.
 
 
 ## Installation
