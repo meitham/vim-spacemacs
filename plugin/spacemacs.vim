@@ -22,7 +22,7 @@ endif
 inoremap <c-g> <esc>
 
 " SPC f
-nnoremap <silent><leader>fy :echo expand('%')<cr>
+nnoremap <silent><leader>fy :echo expand('%:p')<cr>
 nnoremap <silent><leader>fs :w<cr>
 nnoremap <silent><leader>fS :bufdo w<cr>
 nnoremap <silent><leader>fed :e $MYVIMRC<cr>
