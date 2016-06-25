@@ -27,20 +27,6 @@ Then run:
 
 	git clone https://github.com/meitham/vim-spacemacs.git ~/.vim/bundle/vim-spacemacs
     
-## Dependecies
-
-This plugin can safely function on its own, but some extra features can be enabled using
-3rd party plugins.
-
-### tpope/vim-commentary
-  spacemacs default commenting are based on this plugin, so `gc` on selections or objects.
-  `alt+;` as in the default comment operator in emacs is also accessible through this plugin.
-
-### tpope/vim-fugitive
-  `git blame`, `git diff` and `git status` are provided through fugitive
-  
-### godlygeek/tabular
-  all text aligning commands are available through `Tab` from this plugin.
 
 ## Graphical UI Toggles
 
@@ -72,9 +58,9 @@ This plugin can safely function on its own, but some extra features can be enabl
 | SPC b Y     | copy whole buffer to primary clipboard (normal gg"+yG)
 
 
-## Buffers manipulation key bindings
+## File manipulation key bindings
 
-| Key Binding |     Description
+| Key Binding | Description
 | ----------- | ---------------
 | SPC f c     | copy current file to a different location (:w enter-path<cr>)
 | SPC f C d   | convert file from unix to dos encoding (:setlocal ff=dos)
@@ -88,6 +74,46 @@ This plugin can safely function on its own, but some extra features can be enabl
 | SPC f y     | show current file absolute path (:echo expand('%:p'))
 | SPC f e d   | edit the .vimrc file (:e $MYVIMRC)
 | SPC f e R   | reload the .vimrc file (:so $MYVIMRC)
+
+
+## File manipulation key bindings
+
+| Key Binding | Description
+| ----------- | ---------------
+| SPC x u     | set the selected text to lower case (visual  u)
+| SPC x U     | set the selected text to upper case (visual U)
+| SPC x d w   | delete trailing whitespaces (:%s/\s\+//g)
+| SPC x l s   | sort lines (:sort)
+| SPC x l u   | uniquify lines (:sort u)
+| SPC x t c   | swap (transpose) the current character with the next one (normal xp)
+| SPC x t w   | swap (transpose) the current word with the next one (normal dawwp)
+| SPC x t l   | swap (transpose) the current line with the next one (normal ddp)
+ 
+ ### Text alignment requires tabular plugin
+ 
+| Key Binding | Description
+| ----------- | ---------------
+| SPC x a ,   | align region at , (:Tab /,)
+| SPC x a ;   | align region at ; (:Tab /;)
+| SPC x a :   | align region at : (:Tab /:)
+| SPC x a =   | align region at = (:Tab /=)
+| SPC x a &   | align region at & (:Tab /&)
+| SPC x a ¦   | align region at ¦ (:Tab /|)
+
+## Dependecies
+
+This plugin can safely function on its own, but some extra features can be enabled using
+3rd party plugins.
+
+### tpope/vim-commentary
+  spacemacs default commenting are based on this plugin, so `gc` on selections or objects.
+  `alt+;` as in the default comment operator in emacs is also accessible through this plugin.
+
+### tpope/vim-fugitive
+  `git blame`, `git diff` and `git status` are provided through fugitive
+  
+### godlygeek/tabular
+  all text aligning commands are available through `Tab` from this plugin.
 
 ## License
 

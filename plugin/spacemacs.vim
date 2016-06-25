@@ -28,7 +28,7 @@ nnoremap <silent><leader>fCd :setlocal ff=dos<cr>
 nnoremap <silent><leader>fCu :setlocal ff=unix<cr>
 nnoremap <silent><leader>fD :bwipeout<cr>
 nnoremap <silent><leader>ff :e <c-r>=expand('%:p:h') . '/'<cr>
-nnoremap <silent><leader>fF normal gf
+nnoremap <silent><leader>fF gf
 nnoremap <leader>fR :saveas<space>
 nnoremap <silent><leader>fs :w<cr>
 nnoremap <silent><leader>fS :bufdo w<cr>
@@ -61,7 +61,7 @@ nnoremap <silent><leader>bd :bdelete<cr>
 nnoremap <silent><leader>bk :bdelete
 nnoremap <silent><leader>bK :.+,$bdelete<cr>
 nnoremap <silent><leader>be ggdG
-nnoremap <silent><leader>bM normal <c-w>r
+nnoremap <silent><leader>bM <c-w>r
 nnoremap <silent><leader>bn :bnext<cr>
 nnoremap <silent><leader>bp :bprev<cr>
 nnoremap <silent><leader>bR :e! %<cr>
@@ -69,11 +69,21 @@ nnoremap <silent><leader>bY gg"+yG
 nnoremap <silent><leader>bw :setlocal readonly!<cr>
 
 " SPC x
+vnoremap <silent><leader>xu u
+vnoremap <silent><leader>xU U
+
 nnoremap <silent><leader>xdw :%s/\s\+$//<cr>:let @/=''<cr>
 vnoremap <silent><leader>xdw :'<,'>s/\s\+$//<cr>:let @/=''<cr>
 
 nnoremap <silent><leader>xls :sort<cr>
 vnoremap <silent><leader>xls :'<,'>sort<cr>
+
+nnoremap <silent><leader>xlu :sort u<cr>
+vnoremap <silent><leader>xlu :'<,'>sort u<cr>
+
+nnoremap <silent><leader>xtc xp
+nnoremap <silent><leader>xtw dawwp
+nnoremap <silent><leader>xtl ddp
 
 " No microstate yet
 nnoremap <silent><leader>n+ <C-a>
