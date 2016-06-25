@@ -23,6 +23,13 @@ inoremap <c-g> <esc>
 
 " SPC f
 nnoremap <silent><leader>fy :echo expand('%:p')<cr>
+nnoremap <leader>fc :write<space>
+nnoremap <silent><leader>fCd :setlocal ff=dos<cr>
+nnoremap <silent><leader>fCu :setlocal ff=unix<cr>
+nnoremap <silent><leader>fD :bwipeout<cr>
+nnoremap <silent><leader>ff :e <c-r>=expand('%:p:h') . '/'<cr>
+nnoremap <silent><leader>fF normal gf
+nnoremap <leader>fR :saveas<space>
 nnoremap <silent><leader>fs :w<cr>
 nnoremap <silent><leader>fS :bufdo w<cr>
 nnoremap <silent><leader>fed :e $MYVIMRC<cr>
@@ -32,19 +39,21 @@ nnoremap <silent><leader>fel :e <C-R>=expand('%:p:h')<cr><cr>
 function! Togglecolorcolumn() abort
     if &l:colorcolumn ># 0
         return 0
-    else
+    elseif &l:textwidth ># 0
         return &l:textwidth
+    else
+        return 80
     endif
 endfunction
 
 " SPC t
 nnoremap <silent><leader>tf :let &l:colorcolumn=Togglecolorcolumn()<cr>
-nnoremap <silent><leader>thh :set cursorline!<cr>
-nnoremap <silent><leader>thc :set cursorcolumn!<cr>
-nnoremap <silent><leader>tl :set wrap!<cr>
+nnoremap <silent><leader>thh :setlocal cursorline!<cr>
+nnoremap <silent><leader>thc :setlocal cursorcolumn!<cr>
+nnoremap <silent><leader>tl :setlocal wrap!<cr>
 " toggeling numbers here are slightly different than in spacemacs
-nnoremap <silent><leader>tnn :set number!<cr>
-nnoremap <silent><leader>tnr :set relativenumber!<cr>
+nnoremap <silent><leader>tnn :setlocal number!<cr>
+nnoremap <silent><leader>tnr :setlocal relativenumber!<cr>
 
 " SPC b
 nnoremap <silent><leader>bb :ls<cr>
@@ -57,7 +66,7 @@ nnoremap <silent><leader>bn :bnext<cr>
 nnoremap <silent><leader>bp :bprev<cr>
 nnoremap <silent><leader>bR :e! %<cr>
 nnoremap <silent><leader>bY gg"+yG
-nnoremap <silent><leader>bw :set readonly!<cr>
+nnoremap <silent><leader>bw :setlocal readonly!<cr>
 
 " SPC x
 nnoremap <silent><leader>xdw :%s/\s\+$//<cr>:let @/=''<cr>
