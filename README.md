@@ -54,6 +54,24 @@ This plugin can safely function on its own, but some extra features can be enabl
 | SPC t n r   |  toggle relative line numbers (relativenumber)
 
 
+## Buffers manipulation key bindings
+
+| Key Binding |  Description
+| ----------- |  -----------
+| SPC TAB     | switch to alternate buffer in the current window (switch back and forth)
+| SPC b b     | list available buffers (ls)
+| SPC b d     | kill the current buffer (:bdelete)
+| SPC b e     | erase the content of the buffer (ggdG)
+| SPC b k     | kill a buffer (:bdelete and write a name of number then hit enter)
+| SPC b K     | kill all buffers except the current one (:.+,$bdelete)
+| SPC b M     | swap windows (ctrl+w r) rotate
+| SPC b n     | switch to next buffer (:bnext)
+| SPC b p     | switch to previous buffer (:bprev)
+| SPC b R     | revert the current buffer - reload from disk (:e! %)
+| SPC b w     | toggle read-only (writable state)
+| SPC b Y     | copy whole buffer to primary clipboard (gg"+yG)
+
+
 ## License
 
 Copyright (c) Meitham Jamaa.  Distributed under the same terms as Vim itself.

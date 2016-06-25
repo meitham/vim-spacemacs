@@ -49,10 +49,13 @@ nnoremap <silent><leader>tnr :set relativenumber!<cr>
 " SPC b
 nnoremap <silent><leader>bb :ls<cr>
 nnoremap <silent><leader>bd :bdelete<cr>
+nnoremap <silent><leader>bk :bdelete
+nnoremap <silent><leader>bK :.+,$bdelete<cr>
 nnoremap <silent><leader>be ggdG
+nnoremap <silent><leader>bM normal <c-w>r
 nnoremap <silent><leader>bn :bnext<cr>
 nnoremap <silent><leader>bp :bprev<cr>
-nnoremap <silent><leader>br :e! %<cr>
+nnoremap <silent><leader>bR :e! %<cr>
 nnoremap <silent><leader>bY gg"+yG
 nnoremap <silent><leader>bw :set readonly!<cr>
 
