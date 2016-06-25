@@ -76,7 +76,7 @@ Then run:
 | SPC f e R   | reload the .vimrc file (:so $MYVIMRC)
 
 
-## File manipulation key bindings
+## Text manipulation key bindings
 
 | Key Binding | Description
 | ----------- | ---------------
@@ -89,7 +89,7 @@ Then run:
 | SPC x t w   | swap (transpose) the current word with the next one (normal dawwp)
 | SPC x t l   | swap (transpose) the current line with the next one (normal ddp)
  
- ### Text alignment requires tabular plugin
+### Text alignment requires tabular plugin
  
 | Key Binding | Description
 | ----------- | ---------------
