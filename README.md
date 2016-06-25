@@ -42,6 +42,17 @@ This plugin can safely function on its own, but some extra features can be enabl
 ### godlygeek/tabular
   all text aligning commands are available through `Tab` from this plugin.
 
+## Graphical UI Toggles
+
+| Key Binding |  Description
+| ----------- |  -----------
+| SPC t f     |  display the fill column (by default the fill column is set to 80)
+| SPC t h h   |  toggle highlight of the current line (cursorline)
+| SPC t h c   |  toggle highlight of the current column (cursorcolumn)
+| SPC t l     |  toggle truncate lines (wrap)
+| SPC t n n   |  toggle line numbers (number)
+| SPC t n r   |  toggle relative line numbers (relativenumber)
+
 
 ## License
 
