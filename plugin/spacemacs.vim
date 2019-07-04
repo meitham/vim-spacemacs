@@ -22,7 +22,7 @@ endif
 inoremap <c-g> <esc>
 
 " SPC f
-nnoremap <silent><leader>fy :echo expand('%:p')<cr>
+nnoremap <silent><leader>fy :echo expand('%:p')<cr>:let @+=expand('%:p')<cr>
 nnoremap <leader>fc :write<space>
 nnoremap <silent><leader>fCd :setlocal ff=dos<cr>
 nnoremap <silent><leader>fCu :setlocal ff=unix<cr>
@@ -121,4 +121,28 @@ if exists(":Commentary")
         inoremap <a-;> :Commentary<cr>
         vnoremap <a-;> :'<,'>Commentary<cr>
     endif
+endif
+
+" requires Denite
+if exists('g:loaded_denite')
+    call denite#custom#map('insert','<c-a>','<denite:move_caret_to_head>','noremap')
+    call denite#custom#map('insert','<c-end>','<denite:move_to_last_line>','noremap')
+    call denite#custom#map('insert','<c-g>','<denite:suspend>','noremap')
+    call denite#custom#map('insert','<c-home>','<denite:move_to_first_line>','noremap')
+    call denite#custom#map('insert','<c-l>','<denite:redraw>','noremap')
+    call denite#custom#map('insert','<down>','<denite:move_to_next_line>','noremap')
+    call denite#custom#map('insert','<end>','<denite:move_to_bottom>','noremap')
+    call denite#custom#map('insert','<esc>','<denite:leave_mode>','noremap')
+    call denite#custom#map('insert','<home>','<denite:move_to_top>','noremap')
+    call denite#custom#map('insert','<up>','<denite:move_to_previous_line>','noremap')
+    call denite#custom#map('normal','<down>','<denite:move_to_next_line>','noremap')
+    call denite#custom#map('normal','<up>','<denite:move_to_previous_line>','noremap')
+    nnoremap <space>bb :Denite buffer file/old<cr>
+    nnoremap <space>pf :Denite file_rec<cr>
+    call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+    call denite#custom#var('file/rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+    nnoremap <space>pf :<C-u>Denite `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+    nnoremap <space>bb :Denite buffer file/old<cr>
+    nnoremap <space>rl :Denite -resume<cr>
+    nnoremap <space>/ :Denite grep -input=<c-r><c-/><cr>
 endif
